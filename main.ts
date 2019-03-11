@@ -62,6 +62,7 @@ namespace LEDBit {
      * @param index
      */   
     //% blockId=ledbit_led_draw block="LED expression Draw|X %x|Y %y| %on"
+    //% x.min=1 x.max=15 y.min=0 y.max=7
     //% weight=99
     export function LEDDraw(x: number, y: number, on: enState): void {
         if (!initMatrix) {
