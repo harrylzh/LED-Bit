@@ -5,7 +5,7 @@ load dependency
 "HelloBot": "file:../pxt-ledbit"
 */
 
-//% color="#ECA40D" weight=20 icon="\uf085"
+//% color="#E21918" weight=20 icon="\uf37f"
 namespace LEDBit {
 
     // HT16K33 commands
@@ -22,11 +22,27 @@ namespace LEDBit {
     let initMatrix = false
 
     export enum enState { 
-         //% blockId="OFF" block="灭"
+         //% blockId="OFF" block="OFF"
          OFF = 0,
-         //% blockId="ON" block="亮"
+         //% blockId="ON" block="ON"
          ON = 1
     }
+
+    export enum enExpression { 
+        //% blockId="FACE1" block="Smile"
+        FACE1 = 0,
+        //% blockId="FACE2" block="Grin"
+        FACE2,
+        //% blockId="FACE3" block="Sad"
+        FACE3,
+        //% blockId="FACE4" block="Cry"
+        FACE4,
+    }
+
+    let smile: Array<number> = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x8, 0x18, 0x18, 0xf, 0xf0, 0x3, 0xc0];
+    let grin: Array<number> = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3f, 0xfc, 0x15, 0xa8, 0xf, 0xf0, 0x3, 0xc0];
+    let sad: Array<number> = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0xc0, 0xf, 0xf0, 0x18, 0x18, 0x30, 0xc, 0x20, 0x4];
+    let cry: Array<number> = [0x0, 0xc, 0x18, 0xc, 0x18, 0x8, 0x8, 0x0, 0x0, 0x0, 0x0, 0x1, 0xc0, 0x2, 0x20, 0x4, 0x10];
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -60,10 +76,46 @@ namespace LEDBit {
     /**
      * *****************************************************************
      * @param index
-     */   
+     */
+    
+    //% blockId=ledbit_led_show block="LED expression Show|%index"
+    //% weight=99
+    export function LEDShow(index: enExpression): void {
+        if (!initMatrix) {
+            matrixInit();
+            initMatrix = true;
+        }
+        switch(index) { 
+            case enExpression.FACE1: { 
+               //statements; 
+               pins.i2cWriteBuffer(HT16K33_ADDRESS, smile);
+               break; 
+            } 
+            case enExpression.FACE2: { 
+                //statements; 
+                pins.i2cWriteBuffer(HT16K33_ADDRESS, grin);
+                break; 
+            } 
+            case enExpression.FACE3: { 
+                //statements; 
+                pins.i2cWriteBuffer(HT16K33_ADDRESS, sad);
+                break; 
+            } 
+            case enExpression.FACE4: { 
+                //statements; 
+                pins.i2cWriteBuffer(HT16K33_ADDRESS, cry);
+                break; 
+             } 
+            default: { 
+               //statements; 
+               break; 
+            } 
+         } 
+    }
+
     //% blockId=ledbit_led_draw block="LED expression Draw|X %x|Y %y| %on"
     //% x.min=1 x.max=15 y.min=0 y.max=7
-    //% weight=99
+    //% weight=98
     export function LEDDraw(x: number, y: number, on: enState): void {
         if (!initMatrix) {
             matrixInit();
@@ -79,9 +131,9 @@ namespace LEDBit {
         matrixShow();
     }
 
+
     //% blockId=ledbit_led_clear block="LED expression Clear"
-    //% weight=98
-    //% blockGap=50
+    //% weight=97
     export function LEDClear(): void {
         if (!initMatrix) {
             matrixInit();
@@ -94,7 +146,7 @@ namespace LEDBit {
     }
 
     //% blockId=ledbit_led_AllOn block="Matrix All On"
-    //% weight=97
+    //% weight=96
     //% blockGap=50
     export function LEDAllOn(): void {
         if (!initMatrix) {

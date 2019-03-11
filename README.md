@@ -1,4 +1,4 @@
-# HelloBot
+# LEDBit
 
 Extension for Yahboom LEDBit
 

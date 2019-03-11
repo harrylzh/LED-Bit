@@ -1,8 +1,13 @@
 {
-
+  "LEDBit.LEDShow|block": "LED表情面板 顯示|%index",
   "LEDBit.LEDDraw|block": "LED表情面板 設置|X %x|Y %y| %on",
   "LEDBit.LEDClear|block": "LED表情面板 清空",
-  "LEDBit.LEDAllOn|block": "LED表情面板 全亮"
-  
+  "LEDBit.LEDAllOn|block": "LED表情面板 全亮",
+  "LEDBit.enState.OFF|block": "滅",
+  "LEDBit.enState.ON|block": "亮",
+  "LEDBit.enExpression.FACE1|block": "微笑",
+  "LEDBit.enExpression.FACE2|block": "大笑",
+  "LEDBit.enExpression.FACE3|block": "傷心",
+  "LEDBit.enExpression.FACE4|block": "大哭"
   
 }
