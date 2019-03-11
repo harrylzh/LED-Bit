@@ -90,31 +90,43 @@ namespace LEDBit {
             initMatrix = true;
         }
         switch(index) { 
-            case enExpression.FACE1: {            
-                for (let i = 0; i < 17; i++)
-                    smile[i] = smile1[i];
-                
+            case enExpression.FACE1: { 
+                smile[0] = smile1[0];
+                for (let i = 1; i < 17; i + 2) {
+                    smile[i] = smile1[i + 1];
+                    smile[i + 1] = smile1[i];
+                }
+
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, smile);
                 break; 
             } 
             case enExpression.FACE2: { 
                 //statements; 
-                for (let i = 0; i < 17; i++)
-                    grin[i] = grin1[i];
+                grin[0] = grin1[0];
+                for (let i = 1; i < 17; i + 2) {
+                    grin[i] = grin1[i + 1];
+                    grin[i + 1] = grin1[i];
+                }
            
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, grin);
                 break; 
             } 
             case enExpression.FACE3: { 
-                for (let i = 0; i < 17; i++)
-                    sad[i] = sad1[i];
+                sad[0] = sad1[0];
+                for (let i = 1; i < 17; i + 2) {
+                    sad[i] = sad1[i + 1];
+                    sad[i + 1] = sad1[i];
+                }
             
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, sad);
                 break; 
             } 
             case enExpression.FACE4: { 
-                for (let i = 0; i < 17; i++)
-                    cry[i] = cry1[i];
+                cry[0] = cry1[0];
+                for (let i = 1; i < 17; i + 2) {
+                    cry[i] = cry1[i + 1];
+                    cry[i + 1] = cry1[i];
+                }
                 
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, cry);
                 break; 
