@@ -5,7 +5,7 @@ load dependency
 "HelloBot": "file:../pxt-ledbit"
 */
 
-//% color="#E21918" weight=20 icon="\uf37f"
+//% color="#E21918" weight=20 icon="\uf43c"
 namespace LEDBit {
 
     // HT16K33 commands
