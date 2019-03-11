@@ -91,7 +91,7 @@ namespace LEDBit {
         }
         switch(index) { 
             case enExpression.FACE1: {            
-                for (var i = 0; i < 17; i++)
+                for (let i = 0; i < 17; i++)
                     smile[i] = smile1[i];
                 
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, smile);
@@ -99,21 +99,21 @@ namespace LEDBit {
             } 
             case enExpression.FACE2: { 
                 //statements; 
-                for (var i = 0; i < 17; i++)
+                for (let i = 0; i < 17; i++)
                     grin[i] = grin1[i];
            
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, grin);
                 break; 
             } 
             case enExpression.FACE3: { 
-                for (var i = 0; i < 17; i++)
+                for (let i = 0; i < 17; i++)
                     sad[i] = sad1[i];
             
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, sad);
                 break; 
             } 
             case enExpression.FACE4: { 
-                for (var i = 0; i < 17; i++)
+                for (let i = 0; i < 17; i++)
                     cry[i] = cry1[i];
                 
                 pins.i2cWriteBuffer(HT16K33_ADDRESS, cry);
