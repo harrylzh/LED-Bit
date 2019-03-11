@@ -21,7 +21,7 @@ namespace LEDBit {
     let matBuf = pins.createBuffer(17);
     let initMatrix = false
 
-    enum enState { 
+    export enum enState { 
          //% blockId="OFF" block="灭"
          OFF = 0,
          //% blockId="ON" block="亮"
