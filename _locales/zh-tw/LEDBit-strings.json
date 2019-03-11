@@ -1,6 +1,6 @@
 {
 
-  "LEDBit.LEDDraw|block": "LED表情面板 描點|X %x|Y %y",
+  "LEDBit.LEDDraw|block": "LED表情面板 設置|X %x|Y %y| %on",
   "LEDBit.LEDClear|block": "LED表情面板 清空",
   "LEDBit.LEDAllOn|block": "LED表情面板 全亮"
   

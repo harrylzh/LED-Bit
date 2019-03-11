@@ -21,6 +21,13 @@ namespace LEDBit {
     let matBuf = pins.createBuffer(17);
     let initMatrix = false
 
+    enum enState { 
+         //% blockId="OFF" block="灭"
+         OFF = 0,
+         //% blockId="ON" block="亮"
+         ON = 1
+    }
+
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
@@ -54,16 +61,19 @@ namespace LEDBit {
      * *****************************************************************
      * @param index
      */   
-    //% blockId=ledbit_led_draw block="LED expression Draw|X %x|Y %y"
+    //% blockId=ledbit_led_draw block="LED expression Draw|X %x|Y %y| %on"
     //% weight=99
-    export function LEDDraw(x: number, y: number): void {
+    export function LEDDraw(x: number, y: number, on: enState): void {
         if (!initMatrix) {
             matrixInit();
             initMatrix = true;
         }
         let idx = y * 2 + x / 8;
         let tmp = matBuf[idx + 1];
-        tmp |= (1 << (x % 8));
+        if(on == enState.ON)
+            tmp |= (1 << (x % 8));
+        else
+            tmp &= ~(1 << (x % 8));
         matBuf[idx + 1] = tmp;
         matrixShow();
     }
