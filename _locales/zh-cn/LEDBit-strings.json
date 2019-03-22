@@ -4,14 +4,17 @@
   "LEDBit.LEDDraw|block": "LED表情面板 设置|X %x|Y %y| %on",
   "LEDBit.LEDClear|block": "LED表情面板 清空",
   "LEDBit.LEDAllOn|block": "LED表情面板 全亮",
+  "LEDBit.LEDdynamic|block": "LED表情面板 显示动态表情|%index_1",
   "LEDBit.enState.OFF|block": "灭",
   "LEDBit.enState.ON|block": "亮",
   "LEDBit.enExpression.FACE1|block": "微笑",
   "LEDBit.enExpression.FACE2|block": "大笑",
   "LEDBit.enExpression.FACE3|block": "伤心",
-  "LEDBit.enExpression.FACE4|block": "大哭"
-  
-  
-
- 
+  "LEDBit.enExpression.FACE4|block": "大哭",
+  "LEDBit.enExpression.FACE5|block": "惊讶",
+  "LEDBit.enExpression.FACE6|block": "吐舌头",
+  "LEDBit.enExpression.FACE7|block": "咧嘴",
+  "LEDBit.dynamicExpression.dynamic_FACE1|block": "张开嘴巴",
+  "LEDBit.dynamicExpression.dynamic_FACE2|block": "调皮吐舌",
+  "LEDBit.dynamicExpression.dynamic_FACE3|block": "哇哇大哭"
 }
