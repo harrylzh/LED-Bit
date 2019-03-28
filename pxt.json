@@ -1,7 +1,7 @@
 {
     "name": "LEDBit",
-    "version": "1.0.0",
-    "description": "Extension for YahBoom LED:Bit V1.0",
+    "version": "1.0.1",
+    "description": "Extension for YahBoom LED:Bit V1.1",
     "license": "MIT",
     "dependencies": {
         "core": "*"
