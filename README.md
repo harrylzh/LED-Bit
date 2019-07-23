@@ -1,6 +1,6 @@
 # LEDBit
 
-Extension for Yahboom LEDBit
+Extension for Yahboom LEDBit V1.0.3
 
 ## License
 
